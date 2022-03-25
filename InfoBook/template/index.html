@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-    <h1>allo</h1>
-    <ul>
+{% extends 'base.html' %}
 
-    </ul>
-</head>
-<body>
-</body>
-</html>
+
+{% block content %}
+<h1>allo</h1>
+<ul>
+    <div class="row">
+        {% for x in Livre %}
+        <div class="col">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{x.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{x.titre}}</h5>
+                    <p class="card-text">{{x.descrption}}</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</ul>
+
+{% endblock %}
