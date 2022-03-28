@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<ul>
+    <div class="row">
+        {% for x in livre %}
+        {% if x.genre == 1 %}
+        <div class="col">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{x.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{x.titre}}</h5>
+                    <p>{{x.description}}</p>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+        {% endfor %}
+    </div>
+</ul>
+
+{% endblock %}
